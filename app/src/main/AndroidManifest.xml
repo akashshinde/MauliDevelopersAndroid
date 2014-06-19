@@ -60,6 +60,10 @@
             android:name=".Grid"
             android:label="@string/title_activity_grid" >
         </activity>
+        <activity
+            android:name=".ProjectView"
+            android:label="@string/title_activity_project_view" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

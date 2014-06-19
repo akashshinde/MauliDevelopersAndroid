@@ -42,12 +42,12 @@ public class ProjectDetails extends ActionBarActivity {
         projectNoOfFlats = i.getInt("Project_No_of_flats");
         projectName = getIntent().getStringExtra("Project_Name");
         projectAddress = getIntent().getStringExtra("Project_Address");
-        TextView textView = (TextView) findViewById(R.id.textView);
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
-        textView.setText("Project Name :" +projectName);
-        textView1.setText("Project Address :"+projectAddress);
-        textView2.setText("Number of flats :"+projectNoOfFlats);
+        TextView textView = (TextView) findViewById(R.id.textView1);
+        TextView textView1 = (TextView) findViewById(R.id.textView2);
+        TextView textView2 = (TextView) findViewById(R.id.textView3);
+        textView.setText(projectName);
+        textView1.setText(projectAddress);
+        textView2.setText(""+projectNoOfFlats);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         id = id + 1;

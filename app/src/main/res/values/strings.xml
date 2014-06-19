@@ -22,5 +22,6 @@
     <string name="title_activity_all__flats">All_Flats</string>
     <string name="title_activity_single_flat_view">SingleFlatView</string>
     <string name="title_activity_grid">Grid</string>
+    <string name="title_activity_project_view">ProjectView</string>
 
 </resources>
