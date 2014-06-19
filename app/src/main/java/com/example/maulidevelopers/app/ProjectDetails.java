@@ -33,7 +33,7 @@ public class ProjectDetails extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextView textview;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_details);
         String title = getIntent().getStringExtra("title");
@@ -42,8 +42,12 @@ public class ProjectDetails extends ActionBarActivity {
         projectNoOfFlats = i.getInt("Project_No_of_flats");
         projectName = getIntent().getStringExtra("Project_Name");
         projectAddress = getIntent().getStringExtra("Project_Address");
-
-
+        TextView textView = (TextView) findViewById(R.id.textView);
+        TextView textView1 = (TextView) findViewById(R.id.textView1);
+        TextView textView2 = (TextView) findViewById(R.id.textView2);
+        textView.setText("Project Name :" +projectName);
+        textView1.setText("Project Address :"+projectAddress);
+        textView2.setText("Number of flats :"+projectNoOfFlats);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         id = id + 1;
@@ -53,7 +57,6 @@ public class ProjectDetails extends ActionBarActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),All_Flats.class);
                 i.putExtra("position",(int)id);
-
                 startActivity(i);
             }
         });
