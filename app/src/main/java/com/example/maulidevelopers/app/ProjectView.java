@@ -20,7 +20,9 @@ import android.widget.TextView;
 import com.example.maulidevelopers.app.R;
 
 public class ProjectView extends ActionBarActivity implements ActionBar.TabListener {
-
+    String projectName;
+    String projectAddress;
+    int projectNoOfFlats;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -40,6 +42,13 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_view);
+        Bundle im = getIntent().getExtras();
+
+
+        //id = im.getInt("position");
+        //projectNoOfFlats = im.getInt("Project_No_of_flats");
+        //projectName = getIntent().getStringExtra("Project_Name");
+        //projectAddress = getIntent().getStringExtra("Project_Address");
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
@@ -47,7 +56,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),im);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -116,22 +125,33 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
+        Bundle bundle;
+        public SectionsPagerAdapter(FragmentManager fm,Bundle bundle) {
             super(fm);
+            this.bundle = bundle;
+
         }
 
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position)
+            {
+                case 0:
+                            ProjectDetailMainFragment fragment = new ProjectDetailMainFragment();
+                            fragment.setArguments(bundle);
+                       return fragment;
+                case 1:
+                        return PlaceholderFragment.newInstance(position);
+            }
+        return null;
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -139,11 +159,10 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return "Project Details";
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+                    return "Gallery";
+
             }
             return null;
         }

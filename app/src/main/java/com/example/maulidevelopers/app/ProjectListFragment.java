@@ -117,7 +117,7 @@ public class ProjectListFragment extends ListFragment {
         super.onListItemClick(l, v, position, id);
 
 
-            Intent i = new Intent(getActivity(),ProjectDetails.class);
+            Intent i = new Intent(getActivity(),ProjectView.class);
             String title = deptList.get(position).name;
             i.putExtra("title",title);
             i.putExtra("Project_Name",deptList.get(position).name);
