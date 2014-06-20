@@ -41,6 +41,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_flat_view);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Bundle bundle = getIntent().getExtras();
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
@@ -48,7 +49,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),bundle);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -124,9 +125,11 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
+        Bundle bundle;
+        public SectionsPagerAdapter(FragmentManager fm, Bundle bundle) {
             super(fm);
+            this.bundle = bundle;
+
         }
 
         @Override
@@ -136,7 +139,9 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
             //return PlaceholderFragment.newInstance(position + 1);
             switch (position) {
                 case 0:
-                    return PlaceholderFragment.newInstance(position);
+                        PlaceholderFragment fragment = new PlaceholderFragment();
+                        fragment.setArguments(bundle);
+                    return  fragment;
                 case 1:
                      return GridImageViewFragment.newInstance(position);
                  //   return PlaceholderFragment.newInstance(position+1);
@@ -169,6 +174,14 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
+
+        public String name;
+        public String status;
+        public  String hall_size;
+        public  String bedroom_size;
+        public  String kitchen_size;
+        public  String saleble_area;
+        public  String floor;
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -188,13 +201,37 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
         }
 
         public PlaceholderFragment() {
+
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_single_flat_view, container, false);
+            TextView textView1 = (TextView) rootView.findViewById(R.id.textView1);
+            TextView textView2 = (TextView) rootView.findViewById(R.id.textView2);
+            TextView textView3 = (TextView) rootView.findViewById(R.id.textView3);
+            TextView textView4 = (TextView) rootView.findViewById(R.id.textView4);
+            TextView textView5 = (TextView) rootView.findViewById(R.id.textView5);
+            TextView textView6 = (TextView) rootView.findViewById(R.id.textView6);
+
+            name = getArguments().getString("name");
+            hall_size= getArguments().getString("hall_size");
+            kitchen_size= getArguments().getString("kitchen_size");
+            bedroom_size = getArguments().getString("bedroom_size");
+            status= getArguments().getString("status");
+            saleble_area = getArguments().getString("saleble_area");
+            floor = getArguments().getString("floor");
+
+            textView1.setText(floor);
+            textView2.setText(hall_size);
+            textView3.setText(bedroom_size);
+            textView4.setText(kitchen_size);
+            textView5.setText(saleble_area);
+            textView6.setText(status);
+
             return rootView;
+
         }
     }
 

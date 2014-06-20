@@ -1,5 +1,6 @@
 package com.example.maulidevelopers.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 /**
  * Created by Akash on 19/06/14.
  */
-public class ProjectDetailMainFragment extends Fragment {
+public class ProjectDetailMainFragment extends Fragment implements View.OnClickListener {
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -50,11 +51,33 @@ public class ProjectDetailMainFragment extends Fragment {
         projectAddress = getArguments().getString("Project_Address");
         projectNoOfFlats = getArguments().getInt("Project_No_of_flats");
         textView.setText(projectName);
+        Button button = (Button) rootView.findViewById(R.id.button);
+        button.setOnClickListener(this);
         textView1.setText(projectAddress);
         textView2.setText(""+projectNoOfFlats);
 
         return rootView;
     }
-}
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.button:
+                        Intent i = new Intent(getActivity(),All_Flats.class);
+                        i.putExtra("position",1);
+                        startActivity(i);
+                    }
+        return;
+                    }
+        }
+
+
 
 

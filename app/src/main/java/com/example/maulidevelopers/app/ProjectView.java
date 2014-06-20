@@ -2,6 +2,7 @@ package com.example.maulidevelopers.app;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import com.example.maulidevelopers.app.R;
 
@@ -45,6 +47,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
         Bundle im = getIntent().getExtras();
 
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //id = im.getInt("position");
         //projectNoOfFlats = im.getInt("Project_No_of_flats");
         //projectName = getIntent().getStringExtra("Project_Name");
@@ -102,6 +105,12 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
         if (id == R.id.action_settings) {
             return true;
         }
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -143,7 +152,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
                             fragment.setArguments(bundle);
                        return fragment;
                 case 1:
-                        return PlaceholderFragment.newInstance(position);
+                        return ProjectImageGridFragment.newInstance(position);
             }
         return null;
         }
@@ -164,6 +173,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
                     return "Gallery";
 
             }
+
             return null;
         }
     }

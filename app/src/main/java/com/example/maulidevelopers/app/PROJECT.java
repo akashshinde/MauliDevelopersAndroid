@@ -8,5 +8,6 @@ public class PROJECT {
         public String name;
         public String address;
         public Integer no_of_flats;
+        public String floors;
 
 }

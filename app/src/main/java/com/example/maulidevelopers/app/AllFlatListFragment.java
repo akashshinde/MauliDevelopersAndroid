@@ -58,6 +58,14 @@ public class AllFlatListFragment extends ListFragment {
         super.onListItemClick(l, v, position, id);
         {
             Intent i = new Intent(getActivity(),SingleFlatView.class);
+            String title = deptList.get(position).name;
+            i.putExtra("title",title);
+            i.putExtra("Project_Name",deptList.get(position).name);
+            i.putExtra("hall_size",deptList.get(position).hall_size);
+            i.putExtra("bedroom_size",deptList.get(position).bedroom_size);
+            i.putExtra("kitchen_size",deptList.get(position).kitchen_size);
+            i.putExtra("saleble_area",deptList.get(position).saleble_area);
+            i.putExtra("position",(int)position);
             startActivity(i);
         }
     }
@@ -87,6 +95,11 @@ public class AllFlatListFragment extends ListFragment {
                     d.name=j.optString("name").toString();
                     d.project=j.optInt("project_id");
                     d.status = j.optString("status");
+                    d.bedroom_size = j.optString("bed_size");
+                    d.hall_size = j.optString("hall_size");
+                    d.kitchen_size = j.optString("kitchen_size");
+                    d.status = j.optString("status");
+                    d.floor = j.optString("floor");
                     deptList.add(d);
                 }
 

@@ -63,6 +63,7 @@ public class ProjectListFragment extends ListFragment {
                     d.name=j.optString("name").toString();
                     d.no_of_flats=j.optInt("no_of_flats");
                     d.address = j.optString("address");
+                    d.floors = j.optString("floor_size");
                     deptList.add(d);
                 }
 
