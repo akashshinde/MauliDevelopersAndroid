@@ -2,6 +2,7 @@ package com.example.maulidevelopers.app;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -29,6 +30,7 @@ public class GridImageViewFragment extends Fragment {
     public final static String BaseUrl="http://172.20.10.3:3000/flats/all_images.json?flat_id=";
     public final static String BaseUrl2="http://172.20.10.3:3000";
     public String m;
+    public int flat_id;
     ArrayList<IMAGE> deptList=new ArrayList<IMAGE>();
     private static final String ARG_SECTION_NUMBER = "section_number";
     public String url;
@@ -49,7 +51,8 @@ public class GridImageViewFragment extends Fragment {
             android.os.Debug.waitForDebugger();
 
             Hashtable ht=params[0];
-            url = BaseUrl+1;
+            int id = getArguments().getInt("flat_id");
+            url = BaseUrl+id;
             String json=HelperHttp.getJSONResponseFromURL(url,ht);
             if(json!=null) parseJsonString(deptList,json);
             else{
@@ -84,15 +87,27 @@ public class GridImageViewFragment extends Fragment {
                 LazyAdapter adapter = new LazyAdapter(getActivity(),deptList);
                 gridView.setAdapter(adapter);
                  //
+                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        String image_url = deptList.get(i).image_url;
+                        String details  = deptList.get(i).details;
+                        Intent im = new Intent(getActivity(),PhotoView.class);
+                        im.putExtra("image_url",image_url);
+                        im.putExtra("details",details);
+                        startActivity(im);
+                    }
+                });
             }
 
             else{}
         }
     }
-    public static GridImageViewFragment newInstance(int sectionNumber) {
+    public static GridImageViewFragment newInstance(int sectionNumber,int flat_id) {
         GridImageViewFragment fragment = new GridImageViewFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        args.putInt("flat_id",flat_id);
         fragment.setArguments(args);
         return fragment;
     }

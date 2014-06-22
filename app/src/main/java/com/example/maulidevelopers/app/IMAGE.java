@@ -6,5 +6,6 @@ package com.example.maulidevelopers.app;
 public class IMAGE {
 
     String image_url;
+    String details;
 
 }

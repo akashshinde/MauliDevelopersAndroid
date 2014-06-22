@@ -29,6 +29,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
+    public int flat_id;
     SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
@@ -42,6 +43,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
         setContentView(R.layout.activity_single_flat_view);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle bundle = getIntent().getExtras();
+        flat_id = bundle.getInt("flat_id");
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
@@ -49,7 +51,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),bundle);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),bundle,flat_id);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -126,9 +128,11 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Bundle bundle;
-        public SectionsPagerAdapter(FragmentManager fm, Bundle bundle) {
+        int flat_id;
+        public SectionsPagerAdapter(FragmentManager fm, Bundle bundle,int flat_id) {
             super(fm);
             this.bundle = bundle;
+            this.flat_id = flat_id;
 
         }
 
@@ -143,7 +147,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
                         fragment.setArguments(bundle);
                     return  fragment;
                 case 1:
-                     return GridImageViewFragment.newInstance(position);
+                     return GridImageViewFragment.newInstance(position,flat_id);
                  //   return PlaceholderFragment.newInstance(position+1);
 
             }

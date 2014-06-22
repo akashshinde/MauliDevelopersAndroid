@@ -13,6 +13,7 @@ public class FLATS {
     public  String kitchen_size;
     public  String saleble_area;
     public  String floor;
+    public int flat_id;
 
 
 }

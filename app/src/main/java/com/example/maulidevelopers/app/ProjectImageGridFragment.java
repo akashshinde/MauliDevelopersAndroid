@@ -2,6 +2,7 @@ package com.example.maulidevelopers.app;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -83,6 +84,17 @@ public class ProjectImageGridFragment extends Fragment  {
                 GridView gridView = (GridView) getActivity().findViewById(R.id.gridView);
                 LazyAdapter adapter = new LazyAdapter(getActivity(),deptList);
                 gridView.setAdapter(adapter);
+                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            String image_url = deptList.get(i).image_url;
+                            String details  = deptList.get(i).details;
+                        Intent im = new Intent(getActivity(),PhotoView.class);
+                        im.putExtra("image_url",image_url);
+                        im.putExtra("details",details);
+                        startActivity(im);
+                    }
+                });
             }
 
             else{}
