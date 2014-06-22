@@ -1,4 +1,4 @@
-package com.example.maulidevelopers.app;
+package com.example.maulidevelopers.app.Model;
 
 /**
  * Created by Akash on 15/06/14.

@@ -1,23 +1,19 @@
-package com.example.maulidevelopers.app;
+package com.example.maulidevelopers.app.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.maulidevelopers.app.Library.ImageLoader;
+import com.example.maulidevelopers.app.Model.IMAGE;
+import com.example.maulidevelopers.app.R;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 public class LazyAdapter extends BaseAdapter {
     
@@ -30,7 +26,7 @@ public class LazyAdapter extends BaseAdapter {
     private static final String ARG_SECTION_NUMBER = "section_number";
     public String url;
     private static LayoutInflater inflater=null;
-    public ImageLoader imageLoader; 
+    public ImageLoader imageLoader;
     public ArrayList<IMAGE> data;
     GridView gridView;
     public LazyAdapter(Context context, ArrayList<IMAGE> deptList) {

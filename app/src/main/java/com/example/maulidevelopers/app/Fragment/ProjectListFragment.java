@@ -1,4 +1,4 @@
-package com.example.maulidevelopers.app;
+package com.example.maulidevelopers.app.Fragment;
 
 
 import android.content.Intent;
@@ -9,8 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.maulidevelopers.app.Library.HelperHttp;
+import com.example.maulidevelopers.app.Model.PROJECT;
+import com.example.maulidevelopers.app.Adapters.ProjectListAdapter;
+import com.example.maulidevelopers.app.ProjectView;
+import com.example.maulidevelopers.app.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,7 +50,7 @@ public class ProjectListFragment extends ListFragment {
 
             Hashtable ht=params[0];
 
-            String json=HelperHttp.getJSONResponseFromURL(BaseUrl,ht);
+            String json= HelperHttp.getJSONResponseFromURL(BaseUrl, ht);
             if(json!=null) parseJsonString(deptList,json);
             else{
                 return "Invalid Company Id";
@@ -78,7 +82,7 @@ public class ProjectListFragment extends ListFragment {
             if(result=="SUCCESS")
             {
                 //Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
-                setListAdapter(new ProjectListAdapter(getActivity(),R.layout.list_item_card, deptList));
+                setListAdapter(new ProjectListAdapter(getActivity(), R.layout.list_item_card, deptList));
             }
             else{}
         }

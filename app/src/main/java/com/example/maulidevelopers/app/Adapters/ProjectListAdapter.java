@@ -1,4 +1,4 @@
-package com.example.maulidevelopers.app;
+package com.example.maulidevelopers.app.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,19 +7,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.maulidevelopers.app.Model.PROJECT;
+import com.example.maulidevelopers.app.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by Akash on 17/06/14.
- */
-public class AllFlatListAdapter extends ArrayAdapter<FLATS> {
-
+public class ProjectListAdapter extends ArrayAdapter<PROJECT>{
 
     private Context context;
-    ArrayList<FLATS> dataObject;
-    public AllFlatListAdapter(Context context, int textViewResourceId,
-                              ArrayList<FLATS> dataObject) {
+    ArrayList<PROJECT> dataObject;
+    public ProjectListAdapter(Context context, int textViewResourceId,
+                            ArrayList<PROJECT> dataObject) {
         super(context, textViewResourceId, dataObject);
         this.context=context;
     }
@@ -34,15 +32,17 @@ public class AllFlatListAdapter extends ArrayAdapter<FLATS> {
             rowView = inflater.inflate(R.layout.list_item_card, parent, false);
 
         }
-        TextView textView1 = (TextView) rowView.findViewById(R.id.textView1);
+        TextView textView = (TextView) rowView.findViewById(R.id.textView1);
+        TextView textView1 = (TextView) rowView.findViewById(R.id.textView2);
         TextView textView3 = (TextView) rowView.findViewById(R.id.textView3);
-        TextView textView2 = (TextView) rowView.findViewById(R.id.textView2);
-        textView1.setText(""+getItem(position).name);
-        textView3.setText(""+getItem(position).status);
-        textView2.setText(""+getItem(position).project);
+        textView3.setText(""+getItem(position).address);
+        textView.setText(""+getItem(position).name);
+        textView1.setText(""+getItem(position).no_of_flats);
 
         return rowView;
     }
+
+
 
 
 

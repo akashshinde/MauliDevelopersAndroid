@@ -1,23 +1,16 @@
-package com.example.maulidevelopers.app;
+package com.example.maulidevelopers.app.Fragment;
 
-import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.maulidevelopers.app.Model.IMAGE;
+import com.example.maulidevelopers.app.R;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 /**
  * Created by Akash on 18/06/14.
