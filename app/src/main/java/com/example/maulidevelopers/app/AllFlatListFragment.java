@@ -66,6 +66,7 @@ public class AllFlatListFragment extends ListFragment {
             i.putExtra("kitchen_size",deptList.get(position).kitchen_size);
             i.putExtra("saleble_area",deptList.get(position).saleble_area);
             i.putExtra("flat_id",deptList.get(position).flat_id);
+            i.putExtra("info",deptList.get(position).info);
             i.putExtra("position",(int)position);
             startActivity(i);
         }
@@ -102,6 +103,7 @@ public class AllFlatListFragment extends ListFragment {
                     d.status = j.optString("status");
                     d.floor = j.optString("floor");
                     d.flat_id = j.optInt("id");
+                    d.info = j.optString("info");
                     deptList.add(d);
                 }
 

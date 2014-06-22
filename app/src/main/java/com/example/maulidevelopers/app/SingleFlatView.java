@@ -31,7 +31,9 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
      */
     public int flat_id;
     SectionsPagerAdapter mSectionsPagerAdapter;
-
+     String name;
+    public String info;
+    public String title;
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -44,11 +46,14 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle bundle = getIntent().getExtras();
         flat_id = bundle.getInt("flat_id");
-
+        name = bundle.getString("name");
+        info = bundle.getString("info");
+        title = name+info;
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle(title);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),bundle,flat_id);

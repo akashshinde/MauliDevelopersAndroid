@@ -3,7 +3,9 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+
+
+
     </style>
 
     <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
@@ -12,6 +14,8 @@
         <item name="metaButtonBarStyle">@style/ButtonBar</item>
         <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
     </style>
+
+
 
     <style name="ButtonBar">
         <item name="android:paddingLeft">2dp</item>

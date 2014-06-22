@@ -14,6 +14,7 @@ public class FLATS {
     public  String saleble_area;
     public  String floor;
     public int flat_id;
+    public String info;
 
 
 }

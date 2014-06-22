@@ -26,6 +26,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
     String projectAddress;
     int projectNoOfFlats;
     public int project_id;
+    public String title;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -48,8 +49,10 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
         setContentView(R.layout.activity_project_view);
         Bundle im = getIntent().getExtras();
         project_id = im.getInt("project_id");
+        title = im.getString("Project_name");
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         //id = im.getInt("position");
         //projectNoOfFlats = im.getInt("Project_No_of_flats");
         //projectName = getIntent().getStringExtra("Project_Name");
@@ -58,6 +61,8 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle(title);
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
