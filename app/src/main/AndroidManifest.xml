@@ -64,6 +64,10 @@
             android:name=".ProjectView"
             android:label="@string/title_activity_project_view" >
         </activity>
+        <activity
+            android:name=".PhotoView"
+            android:label="@string/title_activity_photo_view" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

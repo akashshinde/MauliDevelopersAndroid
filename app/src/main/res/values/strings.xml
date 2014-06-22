@@ -23,5 +23,6 @@
     <string name="title_activity_single_flat_view">SingleFlatView</string>
     <string name="title_activity_grid">Grid</string>
     <string name="title_activity_project_view">ProjectView</string>
+    <string name="title_activity_photo_view">PhotoView</string>
 
 </resources>

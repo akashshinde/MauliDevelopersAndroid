@@ -25,6 +25,8 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
     String projectName;
     String projectAddress;
     int projectNoOfFlats;
+    public int project_id;
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -45,7 +47,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_view);
         Bundle im = getIntent().getExtras();
-
+        project_id = im.getInt("project_id");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //id = im.getInt("position");
@@ -59,7 +61,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),im);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),im,project_id);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -135,9 +137,11 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Bundle bundle;
-        public SectionsPagerAdapter(FragmentManager fm,Bundle bundle) {
+        int project_id;
+        public SectionsPagerAdapter(FragmentManager fm,Bundle bundle,int project_id) {
             super(fm);
             this.bundle = bundle;
+            this.project_id = project_id;
 
         }
 
@@ -152,7 +156,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
                             fragment.setArguments(bundle);
                        return fragment;
                 case 1:
-                        return ProjectImageGridFragment.newInstance(position);
+                        return ProjectImageGridFragment.newInstance(position,project_id);
             }
         return null;
         }

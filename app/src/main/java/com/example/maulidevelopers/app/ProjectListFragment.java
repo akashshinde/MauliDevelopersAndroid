@@ -64,6 +64,7 @@ public class ProjectListFragment extends ListFragment {
                     d.no_of_flats=j.optInt("no_of_flats");
                     d.address = j.optString("address");
                     d.floors = j.optString("floor_size");
+                    d.id = j.optInt("id");
                     deptList.add(d);
                 }
 
@@ -124,7 +125,7 @@ public class ProjectListFragment extends ListFragment {
             i.putExtra("Project_Name",deptList.get(position).name);
             i.putExtra("Project_Address",deptList.get(position).address);
             i.putExtra("Project_No_of_flats",deptList.get(position).no_of_flats);
-            i.putExtra("position",(int)position);
+            i.putExtra("project_id",deptList.get(position).id);
             startActivity(i);
     }
 }
