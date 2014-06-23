@@ -39,7 +39,8 @@ public class AllFlatListFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View layoutView = inflater.inflate(R.layout.listview, container, false);
+        return layoutView;
     }
 
     private void executeAsyncTask(){
@@ -66,7 +67,7 @@ public class AllFlatListFragment extends ListFragment {
             Intent i = new Intent(getActivity(),SingleFlatView.class);
             String title = deptList.get(position).name;
             i.putExtra("title",title);
-            i.putExtra("Project_Name",deptList.get(position).name);
+            i.putExtra("name",deptList.get(position).name);
             i.putExtra("hall_size",deptList.get(position).hall_size);
             i.putExtra("bedroom_size",deptList.get(position).bedroom_size);
             i.putExtra("kitchen_size",deptList.get(position).kitchen_size);

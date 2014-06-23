@@ -48,7 +48,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
         flat_id = bundle.getInt("flat_id");
         name = bundle.getString("name");
         info = bundle.getString("info");
-        title = name+info;
+        title = name+"("+info+")";
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
