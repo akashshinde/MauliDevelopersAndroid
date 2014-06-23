@@ -1,6 +1,5 @@
 package com.example.maulidevelopers.app;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 import android.support.v7.app.ActionBarActivity;
@@ -11,14 +10,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import com.example.maulidevelopers.app.R;
+
+import com.example.maulidevelopers.app.Fragment.AboutUsFragment;
+import com.example.maulidevelopers.app.Fragment.ContactUsFragment;
+import com.example.maulidevelopers.app.Fragment.ProjectListFragment;
 
 public class StartView extends ActionBarActivity implements ActionBar.TabListener {
 

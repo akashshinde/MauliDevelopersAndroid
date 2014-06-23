@@ -2,7 +2,6 @@ package com.example.maulidevelopers.app;
 
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,10 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.TextView;
 
-import com.example.maulidevelopers.app.R;
+import com.example.maulidevelopers.app.Library.HelperHttp;
+import com.example.maulidevelopers.app.Model.PROJECT;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,7 +69,7 @@ public class ProjectDetailView extends ActionBarActivity {
             android.os.Debug.waitForDebugger();
             Hashtable ht=params[0];
             String url = BaseUrl+id+".json";
-            String json=HelperHttp.getJSONResponseFromURL(url,ht);
+            String json= HelperHttp.getJSONResponseFromURL(url, ht);
             if(json!=null)
                 parseJsonString(deptList,json);
 

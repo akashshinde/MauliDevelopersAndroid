@@ -1,9 +1,6 @@
 package com.example.maulidevelopers.app;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,14 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.maulidevelopers.app.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.maulidevelopers.app.Model.PROJECT;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 public class ProjectDetails extends ActionBarActivity {
 
@@ -36,7 +28,7 @@ public class ProjectDetails extends ActionBarActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_details);
-        String title = getIntent().getStringExtra("title");
+        //String title = getIntent().getStringExtra("Project_Name");
         Bundle i = getIntent().getExtras();
         id = i.getInt("position");
         projectNoOfFlats = i.getInt("Project_No_of_flats");
@@ -48,7 +40,7 @@ public class ProjectDetails extends ActionBarActivity {
         textView.setText(projectName);
         textView1.setText(projectAddress);
         textView2.setText(""+projectNoOfFlats);
-        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setTitle(projectName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         id = id + 1;
         button = (Button)findViewById(R.id.button);

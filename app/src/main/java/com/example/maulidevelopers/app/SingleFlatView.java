@@ -10,14 +10,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.maulidevelopers.app.R;
+
+import com.example.maulidevelopers.app.Fragment.GridImageViewFragment;
 
 public class SingleFlatView extends ActionBarActivity implements ActionBar.TabListener {
 
@@ -48,7 +48,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
         flat_id = bundle.getInt("flat_id");
         name = bundle.getString("name");
         info = bundle.getString("info");
-        title = name+info;
+        title = name+"("+info+")";
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -152,7 +152,7 @@ public class SingleFlatView extends ActionBarActivity implements ActionBar.TabLi
                         fragment.setArguments(bundle);
                     return  fragment;
                 case 1:
-                     return GridImageViewFragment.newInstance(position,flat_id);
+                     return GridImageViewFragment.newInstance(position, flat_id);
                  //   return PlaceholderFragment.newInstance(position+1);
 
             }

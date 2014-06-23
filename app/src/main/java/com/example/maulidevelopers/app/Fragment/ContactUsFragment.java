@@ -1,10 +1,12 @@
-package com.example.maulidevelopers.app;
+package com.example.maulidevelopers.app.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.maulidevelopers.app.R;
 
 /**
  * Created by Akash on 14/06/14.

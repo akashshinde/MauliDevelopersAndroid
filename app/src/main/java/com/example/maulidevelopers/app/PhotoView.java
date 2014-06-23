@@ -7,11 +7,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.maulidevelopers.app.R;
-
-import org.w3c.dom.Text;
-
-import java.net.URI;
+import com.example.maulidevelopers.app.Library.ImageLoader;
 
 public class PhotoView extends ActionBarActivity {
 

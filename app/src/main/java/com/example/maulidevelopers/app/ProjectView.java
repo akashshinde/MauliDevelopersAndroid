@@ -2,7 +2,6 @@ package com.example.maulidevelopers.app;
 
 import java.util.Locale;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -11,15 +10,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import com.example.maulidevelopers.app.R;
+
+import com.example.maulidevelopers.app.Fragment.ProjectDetailMainFragment;
+import com.example.maulidevelopers.app.Fragment.ProjectImageGridFragment;
 
 public class ProjectView extends ActionBarActivity implements ActionBar.TabListener {
     String projectName;
@@ -161,7 +159,7 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
                             fragment.setArguments(bundle);
                        return fragment;
                 case 1:
-                        return ProjectImageGridFragment.newInstance(position,project_id);
+                        return ProjectImageGridFragment.newInstance(position, project_id);
             }
         return null;
         }

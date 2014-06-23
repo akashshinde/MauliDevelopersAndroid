@@ -1,4 +1,4 @@
-package com.example.maulidevelopers.app;
+package com.example.maulidevelopers.app.Fragment;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,6 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.maulidevelopers.app.Adapters.AllFlatListAdapter;
+import com.example.maulidevelopers.app.Model.FLATS;
+import com.example.maulidevelopers.app.Library.HelperHttp;
+import com.example.maulidevelopers.app.R;
+import com.example.maulidevelopers.app.SingleFlatView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +39,8 @@ public class AllFlatListFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View layoutView = inflater.inflate(R.layout.listview, container, false);
+        return layoutView;
     }
 
     private void executeAsyncTask(){
@@ -60,7 +67,7 @@ public class AllFlatListFragment extends ListFragment {
             Intent i = new Intent(getActivity(),SingleFlatView.class);
             String title = deptList.get(position).name;
             i.putExtra("title",title);
-            i.putExtra("Project_Name",deptList.get(position).name);
+            i.putExtra("name",deptList.get(position).name);
             i.putExtra("hall_size",deptList.get(position).hall_size);
             i.putExtra("bedroom_size",deptList.get(position).bedroom_size);
             i.putExtra("kitchen_size",deptList.get(position).kitchen_size);
@@ -80,7 +87,7 @@ public class AllFlatListFragment extends ListFragment {
 
             Hashtable ht=params[0];
 
-            String json=HelperHttp.getJSONResponseFromURL(url,ht);
+            String json= HelperHttp.getJSONResponseFromURL(url, ht);
             if(json!=null) parseJsonString(deptList,json);
             else{
                 return "Invalid Company Id";
@@ -117,7 +124,7 @@ public class AllFlatListFragment extends ListFragment {
             if(result=="SUCCESS")
             {
                 Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
-                setListAdapter(new AllFlatListAdapter(getActivity(),R.layout.list_item_card, deptList));
+                setListAdapter(new AllFlatListAdapter(getActivity(), R.layout.list_item_card, deptList));
             }
             else{}
         }

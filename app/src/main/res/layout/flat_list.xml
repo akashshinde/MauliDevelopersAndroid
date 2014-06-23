@@ -15,6 +15,7 @@
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:paddingRight="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/selector_card_background"
         android:descendantFocusability="afterDescendants"
         android:weightSum="1">
