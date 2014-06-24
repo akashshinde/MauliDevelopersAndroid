@@ -34,7 +34,7 @@ public class AboutUsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.about_us, container, false);
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageView);
         ImageView imageView1 = (ImageView) rootView.findViewById(R.id.imageView1);
-        imageView.setImageResource(R.drawable.mayur);
+        imageView.setImageResource(R.drawable.anand);
         imageView1.setImageResource(R.drawable.mayur);
         return rootView;
 

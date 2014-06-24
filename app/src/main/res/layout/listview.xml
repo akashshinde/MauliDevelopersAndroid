@@ -14,7 +14,6 @@
         android:layout_marginTop="10dp"
 		android:headerDividersEnabled="true"
 		android:footerDividersEnabled="true"
-		android:listSelector="@android:color/holo_orange_light"
 		android:cacheColorHint="@android:color/transparent"
 		android:divider="@null"
 		android:dividerHeight="10dp" />

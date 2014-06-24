@@ -1,10 +1,13 @@
 package com.example.maulidevelopers.app.Fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.maulidevelopers.app.R;
 
@@ -14,6 +17,11 @@ import com.example.maulidevelopers.app.R;
 public class ContactUsFragment extends Fragment{
 
     public ContactUsFragment() {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -30,6 +38,16 @@ public class ContactUsFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.contact_us, container, false);
+        final TextView phn1 = (TextView) rootView.findViewById(R.id.textView4);
+        TextView phn2 = (TextView) rootView.findViewById(R.id.textView5);
+        phn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:+" +phn1.getText().toString().trim()));
+                startActivity(callIntent );
+            }
+        });
         return rootView;
 
     }
