@@ -1,38 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingLeft="15dp"
-    android:background="@drawable/abc_ab_solid_light_holo"
-    android:paddingRight="15dp"
-    android:descendantFocusability="beforeDescendants">
+    xmlns:tools="http://schemas.android.com/tools"
 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/abc_ab_solid_light_holo"
+    android:baselineAligned="false">
     <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/card"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingRight="15dp"
-        android:background="@drawable/selector_card_background"
-        android:descendantFocusability="afterDescendants"
-        android:weightSum="1">
+        android:layout_weight="1">
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight = "1"
+            android:layout_width="140dp"
+            android:layout_height="fill_parent"
             android:id="@+id/imageView"
+            android:layout_marginLeft="10dp"
             />
         <TextView
-            android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Text line 1"
-            android:textColor="#87061a11" />
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/imageView"
+            android:text="Anand Shinde"
+
+            android:layout_marginLeft="10dp"
+            android:textColor="#8605653f"
+            android:textStyle="bold" />
+
 
     </RelativeLayout>
-</FrameLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/card"
+        >
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/imageView1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/imageView1"
+            android:text="Mayur Shinde"
+            android:layout_marginTop="20dp"
+            android:textColor="#8605653f"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+</LinearLayout>
