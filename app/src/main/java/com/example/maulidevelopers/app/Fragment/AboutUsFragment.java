@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.maulidevelopers.app.Library.RoundedImageView;
 import com.example.maulidevelopers.app.R;
 
 /**
