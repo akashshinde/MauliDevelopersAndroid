@@ -1,6 +1,8 @@
 <resources>
 
     <color name="black_overlay">#66000000</color>
-    <color name="actionbar">#FF1D616B</color>
-    <color name="actionbartabs">#641d616b</color>
+    <color name="actionbar">#ff4a7779</color>
+    <color name="actionbartabs">#ff365456</color>
+    <color name="actionbartabsbar">#ff4a7779</color>
+    <color name="backgroundcolor">#9679bec0</color>
 </resources>

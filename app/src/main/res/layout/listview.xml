@@ -13,6 +13,8 @@
 		android:layout_height="match_parent"
         android:layout_marginTop="10dp"
 		android:headerDividersEnabled="true"
+
+
 		android:footerDividersEnabled="true"
 		android:cacheColorHint="@android:color/transparent"
 		android:divider="@null"
