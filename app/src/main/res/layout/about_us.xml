@@ -29,7 +29,7 @@
             android:layout_toRightOf="@id/imageView"
             android:text="Anand Shinde"
 
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:textColor="#8605653f"
             android:textStyle="bold" />
 
