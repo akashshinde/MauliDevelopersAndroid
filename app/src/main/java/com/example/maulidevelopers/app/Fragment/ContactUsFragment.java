@@ -39,12 +39,20 @@ public class ContactUsFragment extends Fragment{
 
         View rootView = inflater.inflate(R.layout.contact_us, container, false);
         final TextView phn1 = (TextView) rootView.findViewById(R.id.textView4);
-        TextView phn2 = (TextView) rootView.findViewById(R.id.textView5);
+        final TextView phn2 = (TextView) rootView.findViewById(R.id.textView5);
         phn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:+" +phn1.getText().toString().trim()));
+                startActivity(callIntent );
+            }
+        });
+        phn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:+" +phn2.getText().toString().trim()));
                 startActivity(callIntent );
             }
         });

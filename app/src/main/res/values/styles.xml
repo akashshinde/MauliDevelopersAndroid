@@ -2,12 +2,15 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="actionBarStyle">@style/ActionBarTheme</item>
 
 
     </style>
 
+    <style name="ActionBarTheme" parent="android:Widget.ActionBar">
+        <item name="background">@color/actionbar</item>
+    </style>
     <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@null</item>
@@ -15,6 +18,26 @@
         <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
     </style>
 
+    <style name="CustomActionBarTheme"
+        parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBarTabs">
+        <item name="android:background">@color/actionbartabs</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/actionbar</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/actionbar</item>
+    </style>
 
 
     <style name="ButtonBar">
