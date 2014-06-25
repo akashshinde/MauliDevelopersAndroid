@@ -134,11 +134,8 @@ public class StartView extends ActionBarActivity implements ActionBar.TabListene
                 case 2:
                     return ContactUsFragment.newInstance(position);
             }
-
             return null;
         }
-
-
         @Override
         public int getCount() {
             // Show 3 total pages.

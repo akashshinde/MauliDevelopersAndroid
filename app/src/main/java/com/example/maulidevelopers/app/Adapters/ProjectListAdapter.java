@@ -37,7 +37,7 @@ public class ProjectListAdapter extends ArrayAdapter<PROJECT>{
         TextView textView3 = (TextView) rowView.findViewById(R.id.textView3);
         textView3.setText(""+getItem(position).address);
         textView.setText(""+getItem(position).name);
-        textView1.setText(""+getItem(position).no_of_flats);
+        textView1.setText("("+getItem(position).no_of_flats+" Flats)");
 
         return rowView;
     }

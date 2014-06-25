@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/abc_ab_solid_light_holo"
+    android:background="@color/backgroundcolor"
     android:baselineAligned="false">
     <RelativeLayout
         android:layout_width="fill_parent"

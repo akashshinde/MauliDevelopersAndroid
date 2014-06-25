@@ -28,7 +28,7 @@ import java.util.Hashtable;
  */
 public class AllFlatListFragment extends ListFragment {
 
-    public final static String BaseUrl="http://172.20.10.3:3000/flats/all_flats.json?id=";
+    public final static String BaseUrl="http://limitless-spire-2426.herokuapp.com/flats/all_flats.json?id=";
     ArrayList<FLATS> deptList=new ArrayList<FLATS>();
     public String url;
     public int flat_id;
@@ -108,6 +108,7 @@ public class AllFlatListFragment extends ListFragment {
                     d.hall_size = j.optString("hall_size");
                     d.kitchen_size = j.optString("kitchen_size");
                     d.status = j.optString("status");
+                    d.saleble_area = j.optString("salable_area");
                     d.floor = j.optString("floor");
                     d.flat_id = j.optInt("id");
                     d.info = j.optString("info");

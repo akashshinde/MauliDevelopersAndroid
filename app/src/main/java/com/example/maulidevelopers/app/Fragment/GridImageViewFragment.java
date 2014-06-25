@@ -29,8 +29,8 @@ import java.util.Hashtable;
  */
 public class GridImageViewFragment extends Fragment {
 
-    public final static String BaseUrl="http://172.20.10.3:3000/flats/all_images.json?flat_id=";
-    public final static String BaseUrl2="http://172.20.10.3:3000";
+    public final static String BaseUrl="http://limitless-spire-2426.herokuapp.com/flats/all_images.json?flat_id=";
+    public final static String BaseUrl2="http://limitless-spire-2426.herokuapp.com";
     public String m;
     public int flat_id;
     ArrayList<IMAGE> deptList=new ArrayList<IMAGE>();

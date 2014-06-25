@@ -9,6 +9,7 @@ public class FLATS {
     public int project;
     public String status;
     public  String hall_size;
+    public String details;
     public  String bedroom_size;
     public  String kitchen_size;
     public  String saleble_area;

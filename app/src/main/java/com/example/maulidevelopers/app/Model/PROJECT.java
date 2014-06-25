@@ -10,5 +10,6 @@ public class PROJECT {
         public Integer no_of_flats;
         public String floors;
         public int id;
+        public String details;
 
 }

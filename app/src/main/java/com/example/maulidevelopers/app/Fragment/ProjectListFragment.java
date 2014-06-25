@@ -1,6 +1,9 @@
 package com.example.maulidevelopers.app.Fragment;
 
 
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -28,7 +31,7 @@ import java.util.Hashtable;
  */
 public class ProjectListFragment extends ListFragment {
 
-    public final static String BaseUrl="http://172.20.10.3:3000/projects.json";
+    public final static String BaseUrl="http://limitless-spire-2426.herokuapp.com/projects.json";
     ArrayList<PROJECT> deptList=new ArrayList<PROJECT>();
 
     public ProjectListFragment() {
@@ -43,6 +46,20 @@ public class ProjectListFragment extends ListFragment {
     }
 
     private class GetDeptAyncTask extends AsyncTask<Hashtable<String,String>,Void,String> {
+
+        private ProgressDialog progressDialog;
+        private GetDeptAyncTask() {
+            this.progressDialog = new ProgressDialog(getActivity());
+            this.progressDialog.setCancelable(false);
+            this.progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            this.progressDialog.setMessage("Loading .....");
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            this.progressDialog.show();
+        }
 
         @Override
         protected String doInBackground(Hashtable<String,String>... params) {
@@ -82,6 +99,9 @@ public class ProjectListFragment extends ListFragment {
             if(result=="SUCCESS")
             {
                 //Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+                if (this.progressDialog.isShowing()) {
+                    this.progressDialog.dismiss();
+                }
                 setListAdapter(new ProjectListAdapter(getActivity(), R.layout.list_item_card, deptList));
             }
             else{}
