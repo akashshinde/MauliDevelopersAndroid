@@ -35,7 +35,6 @@ public class HelperHttp {
 	
 	private static List<NameValuePair> buildNameValuePair(Hashtable<String, String> httpPost){
 		  if(httpPost==null) return null;
-		  
 		  List <NameValuePair> nvps = new ArrayList <NameValuePair>();
 		  Enumeration<String> keys=httpPost.keys();
 		  while(keys.hasMoreElements()){
@@ -44,11 +43,9 @@ public class HelperHttp {
 		         BasicNameValuePair nv=new BasicNameValuePair(key,value);
 		         nvps.add(nv);
 		  }
-		   
 		  return nvps;
 		 }
 
-	
 	private static String buildGetUrl(List<NameValuePair> params, String url){
 		  String paramString = URLEncodedUtils.format(params, "utf-8");
 		  if(!url.endsWith("?"))
@@ -68,16 +65,12 @@ public class HelperHttp {
         SchemeRegistry schemeRegistry = new SchemeRegistry();
         schemeRegistry.register(
                 new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-        
-      
+
         ClientConnectionManager cm = new ThreadSafeClientConnManager(params, schemeRegistry);
-        httpclient = new DefaultHttpClient(cm, params);        
-  
+        httpclient = new DefaultHttpClient(cm, params);
         return (DefaultHttpClient) httpclient;
     }
-	
-	
-	
+
 	public static String getJSONResponseFromURL(String url, Hashtable<String, String> httpGetParams){
 		  String json_string="";
 		  List<NameValuePair> nvps=buildNameValuePair(httpGetParams);
@@ -87,7 +80,6 @@ public class HelperHttp {
 		  try{
 		       HttpGet httpget = new HttpGet(url);
 		       HttpResponse response = getThreadSafeClient().execute(httpget);
-		       
 		       HttpEntity entity = response.getEntity();
 		       is = entity.getContent();
 		    BufferedReader reader=new BufferedReader(new InputStreamReader(is),8192);
@@ -103,7 +95,4 @@ public class HelperHttp {
 		  }
 		  return json_string;
 		 }
-	  
-	
-	
 }

@@ -38,19 +38,28 @@ public class GridImageViewFragment extends Fragment {
     public String url;
 
 
+
     private void executeAsyncTask(){
         Hashtable<String,String> ht=new Hashtable<String,String>();
+        GridView gridView = (GridView) getActivity().findViewById(R.id.gridView);
         GetDeptAyncTask async=new GetDeptAyncTask();
         Hashtable[] ht_array={ht};
         async.execute(ht_array);
     }
 
+
+
     private class GetDeptAyncTask extends AsyncTask<Hashtable<String,String>,Void,String> {
 
 
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
         protected String doInBackground(Hashtable<String,String>... params) {
-            android.os.Debug.waitForDebugger();
 
             Hashtable ht=params[0];
             int id = getArguments().getInt("flat_id");
@@ -84,7 +93,6 @@ public class GridImageViewFragment extends Fragment {
 
             if(result=="SUCCESS")
             {
-                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                 GridView gridView = (GridView) getActivity().findViewById(R.id.gridView);
                 LazyAdapter adapter = new LazyAdapter(getActivity(),deptList);
                 gridView.setAdapter(adapter);

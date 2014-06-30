@@ -16,7 +16,7 @@ public class All_Flats extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_all__flats);
         Bundle i = getIntent().getExtras();
-        id = i.getInt("position");
+        id = i.getInt("Project_id");
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

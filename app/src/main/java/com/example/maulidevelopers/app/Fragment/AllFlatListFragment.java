@@ -1,5 +1,6 @@
 package com.example.maulidevelopers.app.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -73,6 +74,8 @@ public class AllFlatListFragment extends ListFragment {
             i.putExtra("kitchen_size",deptList.get(position).kitchen_size);
             i.putExtra("saleble_area",deptList.get(position).saleble_area);
             i.putExtra("flat_id",deptList.get(position).flat_id);
+            i.putExtra("status",deptList.get(position).status);
+            i.putExtra("floor",deptList.get(position).floor);
             i.putExtra("info",deptList.get(position).info);
             i.putExtra("position",(int)position);
             startActivity(i);
@@ -80,10 +83,23 @@ public class AllFlatListFragment extends ListFragment {
     }
 
     private class GetDeptAyncTask extends AsyncTask<Hashtable<String,String>,Void,String> {
+        private ProgressDialog progressDialog;
+
+        private GetDeptAyncTask() {
+            this.progressDialog = new ProgressDialog(getActivity());
+            this.progressDialog.setCancelable(false);
+            this.progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            this.progressDialog.setMessage("Loading .....");
+        }
+
+        @Override
+         protected void onPreExecute() {
+            super.onPreExecute();
+            this.progressDialog.show();
+        }
 
         @Override
         protected String doInBackground(Hashtable<String,String>... params) {
-            android.os.Debug.waitForDebugger();
 
             Hashtable ht=params[0];
 
@@ -124,7 +140,9 @@ public class AllFlatListFragment extends ListFragment {
 
             if(result=="SUCCESS")
             {
-                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+                if (this.progressDialog.isShowing()) {
+                    this.progressDialog.dismiss();
+                }
                 setListAdapter(new AllFlatListAdapter(getActivity(), R.layout.list_item_card, deptList));
             }
             else{}

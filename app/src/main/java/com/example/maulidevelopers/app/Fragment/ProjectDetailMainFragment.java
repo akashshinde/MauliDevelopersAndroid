@@ -24,6 +24,7 @@ public class ProjectDetailMainFragment extends Fragment implements View.OnClickL
     String projectName;
     String projectAddress;
     int projectNoOfFlats;
+    public  int project_id;
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     /**
@@ -52,20 +53,19 @@ public class ProjectDetailMainFragment extends Fragment implements View.OnClickL
         TextView textView2 = (TextView) rootView.findViewById(R.id.textView3);
         projectName = getArguments().getString("Project_Name");
         projectAddress = getArguments().getString("Project_Address");
+        project_id = getArguments().getInt("Project_id");
         projectNoOfFlats = getArguments().getInt("Project_No_of_flats");
         textView.setText(projectName);
         Button button = (Button) rootView.findViewById(R.id.button);
         button.setOnClickListener(this);
         textView1.setText(projectAddress);
         textView2.setText(""+projectNoOfFlats);
-
         return rootView;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -74,7 +74,7 @@ public class ProjectDetailMainFragment extends Fragment implements View.OnClickL
         {
             case R.id.button:
                         Intent i = new Intent(getActivity(),All_Flats.class);
-                        i.putExtra("position",1);
+                        i.putExtra("Project_id",project_id);
                         startActivity(i);
                     }
         return;

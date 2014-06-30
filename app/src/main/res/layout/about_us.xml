@@ -20,7 +20,7 @@
             android:layout_width="140dp"
             android:layout_height="fill_parent"
             android:id="@+id/imageView"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="0dp"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
         <ImageView
             android:layout_width="140dp"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="0dp"
             android:id="@+id/imageView1"
             />
 

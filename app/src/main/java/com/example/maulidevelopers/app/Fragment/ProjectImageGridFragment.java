@@ -48,7 +48,6 @@ public class ProjectImageGridFragment extends Fragment  {
 
        @Override
         protected String doInBackground(Hashtable<String,String>... params) {
-            android.os.Debug.waitForDebugger();
 
             Hashtable ht=params[0];
             int id = getArguments().getInt("project_id");
@@ -82,7 +81,6 @@ public class ProjectImageGridFragment extends Fragment  {
 
             if(result=="SUCCESS")
             {
-                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                 GridView gridView = (GridView) getActivity().findViewById(R.id.gridView);
                 LazyAdapter adapter = new LazyAdapter(getActivity(),deptList);
                 gridView.setAdapter(adapter);

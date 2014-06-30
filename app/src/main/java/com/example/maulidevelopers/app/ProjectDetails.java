@@ -30,7 +30,7 @@ public class ProjectDetails extends ActionBarActivity {
         setContentView(R.layout.activity_project_details);
         //String title = getIntent().getStringExtra("Project_Name");
         Bundle i = getIntent().getExtras();
-        id = i.getInt("position");
+        id = i.getInt("Project_id");
         projectNoOfFlats = i.getInt("Project_No_of_flats");
         projectName = getIntent().getStringExtra("Project_Name");
         projectAddress = getIntent().getStringExtra("Project_Address");
@@ -42,13 +42,13 @@ public class ProjectDetails extends ActionBarActivity {
         textView2.setText(""+projectNoOfFlats);
         getSupportActionBar().setTitle(projectName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        id = id + 1;
+
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),All_Flats.class);
-                i.putExtra("position",(int)id);
+                i.putExtra("Project_id",(int)id);
                 startActivity(i);
             }
         });

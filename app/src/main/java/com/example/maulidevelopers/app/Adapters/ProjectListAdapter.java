@@ -30,7 +30,6 @@ public class ProjectListAdapter extends ArrayAdapter<PROJECT>{
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             rowView = inflater.inflate(R.layout.list_item_card, parent, false);
-
         }
         TextView textView = (TextView) rowView.findViewById(R.id.textView1);
         TextView textView1 = (TextView) rowView.findViewById(R.id.textView2);

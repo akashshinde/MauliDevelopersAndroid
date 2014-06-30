@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,11 +64,11 @@ public class ProjectListFragment extends ListFragment {
 
         @Override
         protected String doInBackground(Hashtable<String,String>... params) {
-            android.os.Debug.waitForDebugger();
 
             Hashtable ht=params[0];
 
             String json= HelperHttp.getJSONResponseFromURL(BaseUrl, ht);
+            System.out.print("Networks working properly");
             if(json!=null) parseJsonString(deptList,json);
             else{
                 return "Invalid Company Id";
@@ -136,6 +137,7 @@ public class ProjectListFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
     }
 
     @Override
@@ -149,7 +151,7 @@ public class ProjectListFragment extends ListFragment {
             i.putExtra("Project_Name",deptList.get(position).name);
             i.putExtra("Project_Address",deptList.get(position).address);
             i.putExtra("Project_No_of_flats",deptList.get(position).no_of_flats);
-            i.putExtra("project_id",deptList.get(position).id);
+            i.putExtra("Project_id",deptList.get(position).id);
             startActivity(i);
     }
 }

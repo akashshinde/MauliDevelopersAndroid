@@ -21,6 +21,7 @@
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
+        android:gravity="center"
         android:layout_marginTop="56dp"
         android:textColor="#ffffa1be" />
 
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Developers"
+        android:gravity="center"
         android:id="@+id/textView2"
         android:layout_alignBottom="@+id/textView"
         android:layout_toRightOf="@+id/textView"

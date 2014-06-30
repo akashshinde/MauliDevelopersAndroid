@@ -29,23 +29,20 @@ public class AllFlatListAdapter extends ArrayAdapter<FLATS> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View rowView=convertView;
+
         if(rowView==null){
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
             rowView = inflater.inflate(R.layout.list_item_card, parent, false);
-
         }
+
         TextView textView1 = (TextView) rowView.findViewById(R.id.textView1);
         TextView textView3 = (TextView) rowView.findViewById(R.id.textView3);
         TextView textView2 = (TextView) rowView.findViewById(R.id.textView2);
         textView1.setText(""+getItem(position).name);
         textView3.setText(""+getItem(position).status);
-        textView2.setText(""+getItem(position).project);
+        textView2.setText("("+getItem(position).floor+" Floor)");
 
         return rowView;
     }
-
-
-
 }
