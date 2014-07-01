@@ -108,6 +108,7 @@
             android:layout_height="fill_parent"
             android:text="All Flats"
             android:id="@+id/button"
+            android:background="@color/actionbar"
             android:layout_gravity="bottom" />
     </LinearLayout>
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/backgroundcolor"
     android:layout_height="match_parent">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
@@ -13,11 +14,9 @@
     android:orientation="vertical" >
 
 <LinearLayout
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
     android:orientation="horizontal" >
 
@@ -25,11 +24,10 @@
 
     <LinearLayout
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical">
+        android:layout_width="fill_parent"
+        android:layout_height="533dp"
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <ImageView
             android:layout_width="200dp"
@@ -41,17 +39,21 @@
             android:layout_gravity="center"
             />
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/card"
             android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
                 android:text="Project Name : "
                 android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="#ff4f696a"
+
+                android:textColor="#ac000000"
                 />
 
             <TextView
@@ -59,15 +61,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+
                 android:text="age"
                 android:textSize="16sp"
-                android:textColor="#cd151e30" />
+                android:textColor="#a04b4b4b" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:background="@drawable/card"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
 
             android:weightSum="1">
@@ -77,34 +83,35 @@
                 android:layout_height="wrap_content"
                 android:text="Address            : "
                 android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="#ff4f696a"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+
+                android:textColor="#a04b4b4b"
                 />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="age"
-                android:textSize="16sp"
-                android:textColor="#cd151e30"
-                android:layout_weight="0.79" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:background="@drawable/card"
+            android:weightSum="1"
+            android:layout_weight="0.38">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No of Flats       : "
                 android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="#ff4f696a"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+
+
+                android:textColor="#ac000000"
                 />
 
             <TextView
@@ -112,9 +119,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+
                 android:text="age"
                 android:textSize="16sp"
-                android:textColor="#cd151e30"
+                android:textColor="#a04b4b4b"
                 android:layout_weight="0.79" />
         </LinearLayout>
 
@@ -128,13 +138,12 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:text="All Flats"
-            android:id="@+id/button" />
+            android:id="@+id/button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         </RelativeLayout>
 </LinearLayout>

@@ -42,7 +42,7 @@
             android:layout_above="@+id/textView3"
 
             android:text="Text line 1"
-            android:textColor="#42000000"
+            android:textColor="#ff3a5b88"
             android:layout_weight="0.92" />
 
     </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.maulidevelopers.app.Fragment;
 
 import android.content.Intent;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -57,6 +58,7 @@ public class ProjectDetailMainFragment extends Fragment implements View.OnClickL
         projectNoOfFlats = getArguments().getInt("Project_No_of_flats");
         textView.setText(projectName);
         Button button = (Button) rootView.findViewById(R.id.button);
+        button.getBackground().setColorFilter(new LightingColorFilter(0xff4a7779,0xff4a7779));
         button.setOnClickListener(this);
         textView1.setText(projectAddress);
         textView2.setText(""+projectNoOfFlats);

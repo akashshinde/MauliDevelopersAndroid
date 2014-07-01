@@ -21,6 +21,7 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+
     <!-- the theme applied to the application or activity -->
     <style name="CustomActionBarTheme"
         parent="@style/Theme.AppCompat.Light.DarkActionBar">
@@ -39,6 +40,7 @@
         <!-- Support library compatibility -->
         <item name="background">@color/actionbar</item>
     </style>
+
 
 
 </resources>

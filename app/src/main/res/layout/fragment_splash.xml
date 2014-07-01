@@ -1,6 +1,7 @@
+
 <RelativeLayout
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
@@ -9,31 +10,47 @@
         android:id="@+id/imageView"
         android:src="@drawable/bobthebuilder_3"
         android:layout_marginTop="51dp"
+        android:background="@drawable/card"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/card"
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Mauli"
         android:id="@+id/textView"
+        android:textColor="#ffc57693"
+        android:layout_weight="1"
+
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
+        android:gravity="right"
         android:layout_alignStart="@+id/imageView"
-        android:gravity="center"
-        android:layout_marginTop="56dp"
-        android:textColor="#ffffa1be" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Developers"
-        android:gravity="center"
         android:id="@+id/textView2"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:textColor="#ffb1e4ff" />
-
+        android:textColor="#ff84a5b8"
+        android:layout_weight="1"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginTop="10dp"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignBottom="@+id/textView" />
+    </LinearLayout>
 </RelativeLayout>
