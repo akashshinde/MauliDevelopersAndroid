@@ -36,10 +36,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imageView"
+            android:text="Experiance in building sector about 5 Years "
             android:layout_below="@+id/textView"
-            android:text=" Experiance in building sector about 5 Years "
-            />
+            android:textColor="#af4b4b4b"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_alignStart="@+id/textView" />
 
     </RelativeLayout>
     <View
@@ -70,16 +71,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imageView1"
+            android:text="Pursuing Civil Engineering degree "
             android:layout_below="@+id/textView1"
-            android:layout_marginLeft="10dp"
-            android:text=" Pursuing Civil Engineering degree "
-            />
+            android:layout_alignLeft="@+id/textView1"
+            android:textColor="#af4b4b4b"
+            android:layout_marginRight="3dp"
+            android:layout_alignStart="@+id/textView1" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_toRightOf="@id/imageView1"
             android:text="Mayur Shinde"
+            android:layout_marginRight="3dp"
             android:layout_marginTop="20dp"
             android:id="@+id/textView1"
             android:textColor="#8605653f"
