@@ -38,7 +38,8 @@ public class ProjectDetails extends ActionBarActivity {
         TextView textView1 = (TextView) findViewById(R.id.textView2);
         TextView textView2 = (TextView) findViewById(R.id.textView3);
         textView.setText(projectName);
-        textView1.setText(projectAddress);
+        
+        textView1.setText("Address : "+projectAddress);
         textView2.setText(""+projectNoOfFlats);
         getSupportActionBar().setTitle(projectName);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.view.Window;
+import android.view.WindowManager;
 
 import com.example.maulidevelopers.app.R;
 
@@ -23,6 +24,7 @@ public class SplashActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         setContentView(R.layout.activity_splash);
         if (savedInstanceState == null) {

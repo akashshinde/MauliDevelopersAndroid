@@ -35,7 +35,9 @@ public class AboutUsFragment extends Fragment {
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageView);
         ImageView imageView1 = (ImageView) rootView.findViewById(R.id.imageView1);
         imageView.setImageResource(R.drawable.anand);
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imageView1.setImageResource(R.drawable.mayur);
+        imageView1.setScaleType(ImageView.ScaleType.FIT_CENTER);
         return rootView;
 
     }

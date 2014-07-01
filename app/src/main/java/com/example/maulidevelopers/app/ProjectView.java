@@ -47,16 +47,9 @@ public class ProjectView extends ActionBarActivity implements ActionBar.TabListe
         setContentView(R.layout.activity_project_view);
         Bundle im = getIntent().getExtras();
         project_id = im.getInt("project_id");
-        title = im.getString("Project_name");
 
+        title = getIntent().getStringExtra("Project_Name");
 
-
-        //id = im.getInt("position");
-        //projectNoOfFlats = im.getInt("Project_No_of_flats");
-        //projectName = getIntent().getStringExtra("Project_Name");
-        //projectAddress = getIntent().getStringExtra("Project_Address");
-
-        // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayHomeAsUpEnabled(true);

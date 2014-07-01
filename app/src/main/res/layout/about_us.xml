@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Experiance in building sector about 5 Years "
+            android:text="5 years experiance in building sector"
             android:layout_below="@+id/textView"
             android:textColor="#af4b4b4b"
             android:layout_alignLeft="@+id/textView"
@@ -71,7 +71,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pursuing Civil Engineering degree "
+            android:text="Pursuing degree in Civil Engineering  "
             android:layout_below="@+id/textView1"
             android:layout_alignLeft="@+id/textView1"
             android:textColor="#af4b4b4b"
