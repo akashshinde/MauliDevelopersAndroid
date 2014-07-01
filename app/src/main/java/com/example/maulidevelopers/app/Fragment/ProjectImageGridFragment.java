@@ -133,9 +133,9 @@ public class ProjectImageGridFragment extends Fragment {
         executeAsyncTask();
         View vi = inflater.inflate(R.layout.project_gallery_view,container,false);
         GridView gridView = (GridView) vi.findViewById(R.id.gridView);
-        if(deptList.isEmpty())
-            vi = inflater.inflate(R.layout.fragment_empty_view,container,false);
-
+        if(deptList.isEmpty()) {
+            vi = inflater.inflate(R.layout.fragment_empty_view, container, false);
+        }
         return vi;
     }
 

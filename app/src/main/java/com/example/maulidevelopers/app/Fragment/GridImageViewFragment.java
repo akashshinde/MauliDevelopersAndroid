@@ -139,6 +139,10 @@ public class GridImageViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vi = inflater.inflate(R.layout.grid_image_fragment,container,false);
         GridView gridView = (GridView) vi.findViewById(R.id.gridView);
+        if(deptList.isEmpty())
+        {
+            vi = inflater.inflate(R.layout.fragment_empty_view,container,false);
+        }
         executeAsyncTask();
 
         //adapter.notifyDataSetChanged();
