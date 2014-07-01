@@ -93,21 +93,28 @@ public class GridImageViewFragment extends Fragment {
 
             if(result=="SUCCESS")
             {
-                GridView gridView = (GridView) getActivity().findViewById(R.id.gridView);
-                LazyAdapter adapter = new LazyAdapter(getActivity(),deptList);
-                gridView.setAdapter(adapter);
-                 //
-                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        String image_url = deptList.get(i).image_url;
-                        String details  = deptList.get(i).details;
-                        Intent im = new Intent(getActivity(),PhotoView.class);
-                        im.putExtra("image_url",image_url);
-                        im.putExtra("details",details);
-                        startActivity(im);
-                    }
-                });
+                if (deptList.isEmpty()) {
+
+                }
+                else{
+                    GridView gridView = (GridView) getActivity().findViewById(R.id.gridView);
+                    LazyAdapter adapter = new LazyAdapter(getActivity(),deptList);
+                    gridView.setAdapter(adapter);
+                    //
+                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            String image_url = deptList.get(i).image_url;
+                            String details  = deptList.get(i).details;
+                            Intent im = new Intent(getActivity(),PhotoView.class);
+                            im.putExtra("image_url",image_url);
+                            im.putExtra("details",details);
+                            startActivity(im);
+                        }
+                    });
+                }
+
+
             }
 
             else{}
